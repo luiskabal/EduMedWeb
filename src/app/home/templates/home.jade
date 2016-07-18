@@ -1,0 +1,126 @@
+.container-fluid.container-nav
+  nav.navbar.navbar-default.navbar-static-top
+    .container
+      a.logo-content(href='./')
+        h1.logo-app EduMed
+      .navbar-header
+        ul.nav.navbar-nav
+          li
+            a.btn-inicio(href='javascript:;') Inicio
+          li
+            a.btn-login(href='javascript:;', ng-click='clickToOpen()') Login
+      .search-bar
+        input(type='text', placeholder='Explora una enfermedad...')
+        a(href='javascript:;')
+          i.icon-search
+        
+.container-fluid.banner
+  .container
+    .row
+      .col-md-12
+        .banner-content
+          h2 Bienvenido
+          h3 Aprende todo sobre tu condición médica
+          button.btn.btn-default.btn-big-block.yellow(type='button') Comienza ya!
+.container-fluid.bg-home-gray
+  .row.bg-home-white
+    .col-xs-12
+      h2.title-home Acerca de EduMed
+  .container
+    .row
+      .col-md-4
+        .info-block
+          .icon-big-home
+            i.icono.icon-ampolleta
+          h3 Aprende
+          p
+            | A travez de nuesras guías interactivas aprende acerca de tu condición y como mantener un estado saludable de salud.
+      .col-md-4
+        .info-block
+          .icon-big-home
+            i.icono.icon-chat
+          h3 Comunícate
+          p
+            | Comunícate con otros pacientes como tú, ayuda a resolver sus dudas y aclarar las tuyas. También comunícate directamente con tu doctor.
+      .col-md-4
+        .info-block
+          .icon-big-home
+            i.icono.icon-ficha
+          h3 Organízate
+          p
+            | A travéz de las herramientas como el calendario y la ficha clínica organiza tu tratameinto o procedimiento quirúrgico.
+.container-fluid.bg-home-white
+  .row.bg-home-white
+    .col-md-12
+      h2.title-home Suscripción
+  .container
+    .row
+      .col-md-6.border-right
+        .conte-steps.conte-steps-left
+          .conte-step
+            .step-img
+              .img
+                img(src='assets/img/step/01.jpg')
+            .step-txt
+              h3 Mediante su Doctor 
+              p Su doctor le falicitara un código y podra acceder al contenido gratuitamente.
+          .hr-arrow
+          .conte-step.conte-step-right
+            .step-txt
+              p Al completar el formulario de suscripción digite el código.
+            .step-img
+              .img
+                img(src='assets/img/step/02.jpg')
+          .hr-arrow.arrow-left
+          .conte-step
+            .step-img
+              .img
+                img(src='assets/img/step/03.jpg')
+            .step-txt
+              p Ingrese sus datos y comience a explorar el contenido interactivo de su interés
+      .col-md-6
+        .conte-steps.conte-steps-right
+          .conte-step.conte-step-right
+            .step-img
+              .img
+                img(src='assets/img/step/01.jpg')
+            .step-txt
+              h3 Mediante su Doctor 
+              p Su doctor le falicitara un código y podra acceder al contenido gratuitamente.
+          .hr-arrow.arrow-left
+          .conte-step
+            .step-txt
+              p Al completar el formulario de suscripción digite el código.
+            .step-img
+              .img
+                img(src='assets/img/step/02.jpg')
+          .hr-arrow
+          .conte-step.conte-step-right
+            .step-img
+              .img
+                img(src='assets/img/step/03.jpg')
+            .step-txt
+              p Ingrese sus datos y comience a explorar el contenido interactivo de su interés
+.container-fluid.banner-foot
+  .container
+    .row
+      .col-md-12
+        .banner-content
+          .logo-app
+          h3
+            | Tú 
+            span Salud
+            |  Cuenta
+          h4 Aprende a cuidar de ella
+.container-fluid.bg-home-gray
+  .row.bg-home-white
+    .col-xs-12
+      h2.title-home Nuestro contenido:
+  .container
+    .row
+      .col-md-12
+        .cont-carousel
+          .slick-container
+            slick(infinite='true', slides-to-show='4', slides-to-scroll='1')
+              .slick-item(ng-repeat='image in home.images')
+                img(ng-src='{{image.url}}')

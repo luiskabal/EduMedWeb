@@ -1,0 +1,30 @@
+.container-fluid.container-nav
+  nav.navbar.navbar-default.navbar-static-top
+    nav.navbar.navbar-default.navbar-static-top
+      .container
+        a.logo-content(href='./')
+          h1.logo-app EduMed
+        .navbar-header
+          ul.nav.navbar-nav
+            li
+              a.btn-inicio(href='javascript:;') Inicio
+            li
+              a.btn-login(href='javascript:;', ng-click='clickToOpen()') Login
+        .search-bar
+          input(type='text', placeholder='Explora una enfermedad...')
+          a(href='javascript:;')
+            i.icon-search
+div(ui-view='dashView')
+nav.nav-footer
+  .container
+    .btns-footer
+      a.btn-foot.btn-aprender(href='javascript:;', go-click='/modulos')
+        | Aprender 
+        i.icon-ampolleta-2
+      a.btn-foot.btn-calendario(href='javascript:;', go-click='/calendario')
+        | Mi Calendario 
+        i.icon-calendario
+      // a href="#" class="btn-foot btn-comunidad">Comunidad <i class="icon-chat"></i></a
+      a.btn-foot.btn-tratamiento(href='javascript:;', go-click='/tratamientos')
+        | Mi tratmiento 
+        i.icon-ficha

@@ -1,0 +1,44 @@
+.cont-carousel {
+	padding:40px 0;
+}
+.slick-container {
+	.slick-prev,
+	.slick-next  {
+		position: absolute;
+		width:140px;
+		height:140px;
+		top: 50%;
+		line-height: 140px;
+		color: transparent;
+		margin-top: -70px;
+		border: none;
+    outline: none;
+    background: transparent;
+		&:before {
+			font-family: 'edumed' !important;
+			color:#EC7831;
+			font-size:140px;
+		}
+	}
+	.slick-prev {
+		left:-105px;
+		&:before {
+			content:"\e906";
+
+		}
+	}
+	.slick-next {
+		right:-105px;
+		&:before {
+			content:"\e908";
+
+		}
+	}
+	.slick-item {
+		padding:20px;
+		img {
+ 			width:100%;
+ 			height:auto;
+}
+	}
+}

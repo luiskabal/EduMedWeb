@@ -1,0 +1,105 @@
+.container-fluid
+  .container.logged-container
+    .row
+      .col-md-8.col-xs-12
+        h2.titulo Aprender
+        .content-video
+          videogular(vg-player-ready='learn.onPlayerReady($API)', ng-show='!learn.testRun', vg-theme='learn.config.theme.url', vg-complete='learn.onCompleteVideo()')
+            vg-media(vg-src='learn.config.sources', vg-native-controls='false')
+            vg-overlay-play
+            vg-poster(vg-url='learn.config.plugins.poster')
+            vg-controls
+              vg-play-pause-button
+              vg-time-display {{ currentTime | date:'mm:ss':'+0000' }}
+              vg-scrub-bar
+                vg-scrub-bar-current-time
+              vg-time-display {{ timeLeft | date:'mm:ss':'+0000' }}
+              vg-time-display {{ totalTime | date:'mm:ss':'+0000' }}
+              vg-volume
+                vg-mute-button
+                vg-volume-bar
+              vg-fullscreen-button
+            vg-buffering
+     
+      .col-md-4.col-xs-12
+        h2.titulo Guias Relacionadas
+        .row
+          .col-xs-12
+            .panel.panel-default.no-video
+              .panel-thumbnail.video
+                img.img-responsive(src='assets/img/video/La_artritis_psoriasica.jpg')
+              .panel-body
+                h3 Artritis Psoriasica
+                h4 Introducción
+                .modulo-info
+                  | Estado:   
+                  span.estado.ok Completado
+                .fecha-info
+                  i.icon.ion-android-calendar
+                  .fecha
+                    span 
+                      strong Iniciado: 
+                      | 24/06/2016
+                    span 
+                      strong Finalizado:  
+                      | 28/06/2016
+                .progreso
+                  .mod.ok
+                  .mod.ok
+                  .mod.ok
+                  .mod
+                p
+                  button.btn.btn-primary.btn-block(type='button') Ver Modulo
+          .col-xs-12
+            .panel.panel-default.no-video
+              .panel-thumbnail.video
+                img.img-responsive(src='assets/img/video/La_artritis_psoriasica.jpg')
+              .panel-body
+                h3 Artritis Psoriasica
+                h4 Introducción
+                .modulo-info
+                  | Estado:   
+                  span.estado Incompleto
+                .fecha-info
+                  i.icon.ion-android-calendar
+                  .fecha
+                    span 
+                      strong Iniciado: 
+                      | 24/06/2016
+                    span 
+                      strong Finalizado:  
+                      | -
+                .progreso
+                  .mod
+                  .mod
+                  .mod
+                  .mod
+                p
+                  button.btn.btn-primary.btn-block(type='button') Ver Modulo
+          .col-xs-12
+            .panel.panel-default.no-video
+              .panel-thumbnail.video
+                img.img-responsive(src='assets/img/video/La_artritis_psoriasica.jpg')
+              .panel-body
+                h3 Artritis Psoriasica
+                h4 Introducción
+                .modulo-info
+                  | Estado:   
+                  span.estado.ok Completado
+                .fecha-info
+                  i.icon.ion-android-calendar
+                  .fecha
+                    span 
+                      strong Iniciado: 
+                      | 24/06/2016
+                    span 
+                      strong Finalizado:  
+                      | 28/06/2016
+                .progreso
+                  .mod.ok
+                  .mod.ok
+                  .mod.ok
+                  .mod
+                p
+                  button.btn.btn-primary.btn-block(type='button') Ver Modulo
+        

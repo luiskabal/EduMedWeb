@@ -1,0 +1,109 @@
+@import "variables";
+
+@font-face {
+    font-family: 'edumed';
+    src:    url('#{$icomoon-font-path}/edumed.eot?8ker72');
+    src:    url('#{$icomoon-font-path}/edumed.eot?8ker72#iefix') format('embedded-opentype'),
+        url('#{$icomoon-font-path}/edumed.ttf?8ker72') format('truetype'),
+        url('#{$icomoon-font-path}/edumed.woff?8ker72') format('woff'),
+        url('#{$icomoon-font-path}/edumed.svg?8ker72#edumed') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'edumed' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-search {
+    &:before {
+        content: $icon-search;
+    }
+}
+.icon-ampolleta-2 {
+    &:before {
+        content: $icon-ampolleta-2;
+    }
+}
+.icon-calendario {
+    &:before {
+        content: $icon-calendario;
+    }
+}
+.icon-cita {
+    &:before {
+        content: $icon-cita;
+    }
+}
+.icon-ficha-2 {
+    &:before {
+        content: $icon-ficha-2;
+    }
+}
+.icon-plus {
+    &:before {
+        content: $icon-plus;
+    }
+}
+.icon-back {
+    &:before {
+        content: $icon-back;
+    }
+}
+.icon-edit {
+    &:before {
+        content: $icon-edit;
+    }
+}
+.icon-next {
+    &:before {
+        content: $icon-next;
+    }
+}
+.icon-square {
+    &:before {
+        content: $icon-square;
+    }
+}
+.icon-ampolleta {
+    &:before {
+        content: $icon-ampolleta;
+    }
+}
+.icon-arrow {
+    &:before {
+        content: $icon-arrow;
+    }
+}
+.icon-cam {
+    &:before {
+        content: $icon-cam;
+    }
+}
+.icon-chat {
+    &:before {
+        content: $icon-chat;
+    }
+}
+.icon-doctor {
+    &:before {
+        content: $icon-doctor;
+    }
+}
+.icon-ficha {
+    &:before {
+        content: $icon-ficha;
+    }
+}
+

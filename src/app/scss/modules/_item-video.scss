@@ -1,0 +1,110 @@
+.progreso {
+    @extend .row-block;
+    margin-bottom: 10px;
+    .mod{
+      @extend .col-block;
+      color:#DC955D;
+      width: 25%;
+      text-align: center;
+      &:before {
+        font-family: "Ionicons";
+        content: "\f463";
+        font-size: 34px;
+      }
+      &.ok {
+        color:#239BAB;
+        &:before {
+          content: "\f3fe";
+        }
+      }
+    }
+}
+.panel {
+  .panel-body {
+    h3 {
+      color: #239BAB;
+      font-size: 18px;
+      margin: 0;
+      font-weight: bold;
+    }
+    h4 {
+      color: #239BAB;
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+  .panel-thumbnail.video {
+    position: relative;
+    &:before {
+      background: url('../assets/img/icon/play-button.svg');
+      content: "";
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-size: 20%;
+    background-repeat: no-repeat;
+    background-position: center;
+    }
+  }
+  &.no-video {
+    .panel-thumbnail.video {
+      display: none;
+    }
+  }
+}
+.fecha-info {
+  color: #607D8B;
+  position: relative;
+  padding: 10px 10px  10px 40px;
+  top: 0;
+  .icon {
+    font-size: 32px;
+    left: 0;
+    position: absolute;
+    line-height: 100%;
+    top: 7px;
+  }
+  .fecha {
+    span {
+      display: block;
+      line-height: 120%;
+      font-size: 12px;
+    }
+  }
+}
+.modulo-info {
+  padding: 5px 0 0 0;
+  font-size: 12px;
+  color: #607D8B;
+  .estado {
+    color:#f44336;
+    
+    &.ok {
+      color: #4caf50;
+    }
+  }
+}
+.busqueda {
+  padding-bottom: 40px;
+  .input-group-btn {
+        border: 1px solid #209BAB;
+  }
+}
+
+.mensaje {
+  text-align: center;
+  padding: 20px;
+  p {
+    font-size: 16px;
+  }
+  .icono {
+    font-size: 34px;
+  }
+  &.info {
+    color: #239BAB;
+    p {
+      color:#239BAB;
+    }
+  }
+}

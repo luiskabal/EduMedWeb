@@ -1,0 +1,28 @@
+.table {
+	thead {
+		tr {
+			background:#F7F8F6;
+			border-color:#F7F8F6;
+			th {
+				color:#DD965D;
+				font-weight:400;
+				border-color:#F7F8F6;
+			}
+		}
+	}
+	tbody {
+		tr {
+			background:#F7F8F6;
+			td {
+				border-color:#F7F8F6;
+				color:#6BB6D2;
+			}
+			&:nth-child(odd) {
+				background:#F2F2EF;
+				td {
+					border-color:#F2F2EF;
+				}
+			}
+		}
+	}
+}

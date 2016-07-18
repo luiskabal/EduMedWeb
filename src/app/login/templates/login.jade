@@ -1,0 +1,28 @@
+.container
+  .row
+    .col-md-4.col-md-offset-7
+      .panel.panel-default.panel-login
+        .panel-body
+          .content-logo-login
+            .logo-login 
+          form(role='form')
+            .form-group
+              label.control-label(for='inputEmail') Email
+              input#inputEmail.form-control(placeholder='Email (ej. test@test.com)', required='', type='email')
+            .form-group
+              label.control-label(for='inputPassword') Contraseña
+              input#inputPassword.form-control(placeholder='Contraseña', required='', type='password')
+            .form-group             
+              .checkbox
+                label
+                  input(type='checkbox')
+                  | Recuérdame en este equipo
+            .form-group              
+              button.btn.btn-primary.btn-large.btn-block(type='submit') Iniciar Sesion
+            .form-group.last
+              button.btn.btn-warning.btn-large.btn-block(type='submit') Suscribete
+        .panel-footer
+          p.tcenter
+            | has olvidado la contraseña de EduMed.
+            br 
+            a(href='#')  Recuperar contraseña
