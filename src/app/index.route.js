@@ -51,7 +51,7 @@
         }
       })
       .state('dash.learn', {
-        url: '/learn',
+        url: '/aprender',
         views: {
           'dashView': {
             templateUrl: 'app/modules/templates/learn.html',
@@ -67,6 +67,16 @@
             templateUrl: 'app/modules/templates/video.html',
             controller: 'learnController',
             controllerAs: 'learn'
+          }
+        }
+      })
+      .state('dash.user', {
+        url: '/user',
+        views: {
+          'dashView': {
+            templateUrl: 'app/user/templates/user.html',
+            controller: 'userController',
+            controllerAs: 'user'
           }
         }
       });

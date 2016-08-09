@@ -30,6 +30,14 @@
             }
            
 		};
+
+    vm.onCompleteVideo = function() {
+			console.log("on complete 1");
+
+		
+				//template: 'modules/modulos/templates/modal.html',
+				
+		};
 		
 		vm.testRun = false;
 		vm.starTest = function() {

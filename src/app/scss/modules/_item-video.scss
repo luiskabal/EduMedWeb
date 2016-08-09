@@ -96,15 +96,26 @@
   text-align: center;
   padding: 20px;
   p {
-    font-size: 16px;
+    font-size: 18px;
   }
   .icono {
     font-size: 34px;
+    margin-bottom: 20px;
   }
   &.info {
     color: #239BAB;
     p {
       color:#239BAB;
     }
+    .icono {
+      
+    }
   }
+}
+.icono-triste {
+  background-image: url('../assets/img/icon/triste.svg');
+  background-size: contain;
+  display: inline-block;
+  width: 70px;
+  height: 70px;
 }

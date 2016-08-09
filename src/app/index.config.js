@@ -6,7 +6,7 @@
     .config(config);
 
   /** @ngInject */
-  function config($logProvider, toastrConfig) {
+  function config($logProvider, toastrConfig, $modalProvider) {
     // Enable log
     $logProvider.debugEnabled(true);
 
@@ -16,6 +16,13 @@
     toastrConfig.positionClass = 'toast-top-right';
     toastrConfig.preventDuplicates = true;
     toastrConfig.progressBar = true;
+
+    angular.extend($modalProvider.defaults, {
+      html: true,
+      animation: 'am-fade-and-scale',
+      placement: 'center',
+      backdrop: 'static'
+    });
   }
 
 })();

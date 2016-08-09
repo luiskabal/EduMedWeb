@@ -1,0 +1,12 @@
+.modal.text-left(ng-controller="modalController as modal")
+  .modal-dialog
+    .modal-content
+      .modal-body
+        div
+          | Select an image file: 
+          input(id="fileInput",type='file')
+        .cropArea
+          img-crop(image='myImage', result-image='myCroppedImage')
+        div Cropped Image:
+        div
+          img(ng-src='{{myCroppedImage}}')
