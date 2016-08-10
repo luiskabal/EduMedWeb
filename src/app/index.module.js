@@ -18,7 +18,8 @@
       'com.2fdevs.videogular.plugins.buffering',
       'com.2fdevs.videogular.plugins.overlayplay',
       'com.2fdevs.videogular.plugins.poster',
-      'ngImgCrop'
+      'ngImgCrop',
+      'naif.base64'
       ]);
 
 })();
