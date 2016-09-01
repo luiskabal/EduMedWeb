@@ -3,10 +3,10 @@
 
   angular
     .module('eduMed')
-    .controller('userController', userController);
+    .controller('UserController', UserController);
 
-  userController.$inject = ['$log', '$modal'];
-  function userController($log, $modal) {
+  UserController.$inject = ['$log', '$modal'];
+  function UserController($log, $modal) {
     var vm = this;
     
     

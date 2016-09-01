@@ -1,6 +1,35 @@
+//table
+.table-patients {
+  thead {
+    th {
+      background-color: #239BAB;
+      color: #ffffff;
+      padding: 5px;
+    }
+  }
+  tbody {
+    td.td-avatar {
+      padding: 5px;
+    }
+  }
+  
+}
 .patients {
   .media-object {
     width: 80px;
     height: 80px;
+  }
+}
+.cont-avatar.cont-avatar-table {
+  .avatar {
+    width: 60px;
+    height: 60px;
+    &:after {
+      display: none;
+    }
+    img {
+      width: 60px;
+      height: 60px;
+    }
   }
 }

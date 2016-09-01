@@ -3,10 +3,10 @@
 
   angular
     .module('eduMed')
-    .controller('mainController', mainController);
+    .controller('MainController', MainController);
 
   /** @ngInject */
-  function mainController() {
+  function MainController() {
     var vm = this;
 
     

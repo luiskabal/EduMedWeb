@@ -19,7 +19,8 @@
       'com.2fdevs.videogular.plugins.overlayplay',
       'com.2fdevs.videogular.plugins.poster',
       'ngImgCrop',
-      'naif.base64'
+      'naif.base64',
+      'duParallax'
       ]);
 
 })();

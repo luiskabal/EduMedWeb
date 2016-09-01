@@ -22,9 +22,9 @@
         };
         return directive;
         
-        function link(scope, elem, attr) {
+        function link(scope, elem) {
             $log.log('funca');
-            $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
+            $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState) {
                 var fromClassnames = angular.isDefined(fromState.data) && angular.isDefined(fromState.data.cssClassnames) ? fromState.data.cssClassnames : null;
                 var toClassnames = angular.isDefined(toState.data) && angular.isDefined(toState.data.cssClassnames) ? toState.data.cssClassnames : null;
 

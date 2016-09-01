@@ -56,11 +56,12 @@
 }
 .logo-app {
 	background: url(../assets/img/logo.png);
-    display: block;
-    width: 95px;
-    height: 65px;
-    background-size: contain;
-    background-repeat:no-repeat;
+	display: block;
+	width: 95px;
+	height: 65px;
+	background-size: contain;
+	background-repeat:no-repeat;
+	margin: 0;
 }
 .container-nav {
 	padding: 40px 0 0 0; 
@@ -206,6 +207,7 @@ body {
 		height:500px;
 		max-width:450px;
 		float: right;
+		padding-top: 80px;
 		h2 {
 			color: #fff;
 			font-weight: 300;
@@ -217,6 +219,9 @@ body {
 			color:#fff;
 			font-weight: 700;
 			margin: 0;
+		}
+		.btn {
+			margin-top: 20px;
 		}
 	}
 }
@@ -240,13 +245,26 @@ body {
 	}
 }
 .banner-foot {
-	background:#000 url(../assets/img/back/back-04.jpg);
+	//background:#000 url(../assets/img/back/back-04.jpg);
 	background-size:cover;
 	background-repeat:no-repeat;
 	background-position: center;
+	overflow: hidden;
+	height:400px;
+	padding: 0;
+	position: relative;
+	img {
+		width: 100%;
+	}
+	.container-banner-foot {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
 	.banner-content {
 		height:400px;
 		max-width:450px;
+		padding-top: 40px;
 		float: right;
 		.logo-app {
 			width:200px;
@@ -1689,4 +1707,11 @@ videogular {
 }
 .custom-file-input:active::before {
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.odd {
+	background-color:#f1f0f0;
+}
+table.table-patients {
+	width: 100%;
 }

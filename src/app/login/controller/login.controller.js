@@ -3,11 +3,15 @@
 
     angular
         .module('eduMed')
-        .controller('loginController', loginController);
+        .controller('LoginController', LoginController);
 
-    loginController.$inject = ['$log'];
-    function loginController($log) {
+    LoginController.$inject = ['$log','$state'];
+    function LoginController($log,$state) {
         var vm = this;
+
+        vm.goDash = function() {
+            $state.go('dash.main');
+        }
         
 
         activate();

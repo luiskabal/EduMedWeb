@@ -1,0 +1,50 @@
+.container-fluid
+  .container.logged-container
+    h2.titulo Mis Pacientes
+    .row
+      .col-xs-12
+        table.table-patients.table-responsive
+          thead
+            tr
+              th.col-xs-1
+              th.col-xs-2 Nombre
+              th.col-xs-2 Guía Actual
+              th.col-xs-2 Institución
+              th.col-xs-1
+          tbody
+            tr(ng-repeat-start='u in patients.users track by $index', ng-click='patients.showDetail(u.id)', ng-class-odd="'odd'")
+              td.td-avatar.col-xs-1
+                .cont-avatar.cont-avatar-table
+                  .avatar
+                    img(title='{{u.user}}', ng-src='https://randomuser.me/api/portraits/men/{{$index + ".jpg"}}')
+              td.col-xs-2.cap {{u.nombre}}
+              td.col-xs-2.cap Resfrio Introducción
+              td.col-xs-2.strong Clinica del Dr Guti
+              td.col-xs-1
+                a(href='')
+                  i.ion-plus
+            tr(ng-repeat-end='', ng-show='patients.active === u.id', ng-class-odd="'odd'")
+              td
+              td(colspan='4')
+                .row
+                  .col-xs-12
+                    
+                  .col-md-3.col-xs-6.small
+                    h2 Prevenir 1
+                    div
+                      .col
+                        span Completado
+                        span.porcent 3
+                        small Modulos
+                      .col
+                        span Reitentos
+                        span.porcent 3
+                        small Intentos 
+                      .col
+                        span Tiempo
+                        span.porcent 3
+                        small semana 
+      // /row
+      .row
+        hr
+    // /container

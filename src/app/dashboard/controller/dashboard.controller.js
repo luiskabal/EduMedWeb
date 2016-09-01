@@ -3,17 +3,12 @@
 
   angular
     .module('eduMed')
-    .controller('dashboardController', dashboardController);
+    .controller('DashboardController', DashboardController);
 
-  //dashboardController.$inject = [];
-  function dashboardController() {
-    var vm = this;
+  //DashboardController.$inject = [];
+  function DashboardController() {
+    //var vm = this;
     
 
-    activate();
-
-    ////////////////
-
-    function activate() { }
   }
 })();

@@ -3,10 +3,10 @@
 
   angular
     .module('eduMed')
-    .controller('learnController', learnController);
+    .controller('LearnController', LearnController);
 
-  learnController.$inject = ['$sce'];
-  function learnController($sce) {
+  LearnController.$inject = ['$sce'];
+  function LearnController($sce) {
     var vm = this;
     
     vm.API = null;

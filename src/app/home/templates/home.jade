@@ -5,11 +5,11 @@
         h1.logo-app EduMed
       .navbar-header
         ul.nav.navbar-nav
+          //li
+          //  a.btn-inicio(href='javascript:;') Inicio
           li
-            a.btn-inicio(href='javascript:;') Inicio
-          li
-            a.btn-login(href='javascript:;', ng-click='clickToOpen()') Login
-      .search-bar
+            a.btn-login(href='#/login') Login
+      //.search-bar
         input(type='text', placeholder='Explora una enfermedad...')
         a(href='javascript:;')
           i.icon-search
@@ -30,21 +30,21 @@
     .row
       .col-md-4
         .info-block
-          .icon-big-home
+          .icon-big-home(du-parallax,custom="home.fadeIn" )
             i.icono.icon-ampolleta
           h3 Aprende
           p
             | A travez de nuesras guías interactivas aprende acerca de tu condición y como mantener un estado saludable de salud.
       .col-md-4
         .info-block
-          .icon-big-home
+          .icon-big-home(du-parallax,custom="home.fadeIn" )
             i.icono.icon-chat
           h3 Comunícate
           p
             | Comunícate con otros pacientes como tú, ayuda a resolver sus dudas y aclarar las tuyas. También comunícate directamente con tu doctor.
       .col-md-4
         .info-block
-          .icon-big-home
+          .icon-big-home(du-parallax,custom="home.fadeIn" )
             i.icono.icon-ficha
           h3 Organízate
           p
@@ -102,7 +102,8 @@
             .step-txt
               p Ingrese sus datos y comience a explorar el contenido interactivo de su interés
 .container-fluid.banner-foot
-  .container
+  img(src='assets/img/back/back-04.jpg',du-parallax, y="home.background")
+  .container.container-banner-foot
     .row
       .col-md-12
         .banner-content

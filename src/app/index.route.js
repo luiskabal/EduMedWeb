@@ -11,7 +11,7 @@
       .state('home', {
         url: '/',
         templateUrl: 'app/home/templates/home.html',
-        controller: 'homeController',
+        controller: 'HomeController',
         controllerAs: 'home',
         data : {
           cssClassnames : 'home'
@@ -20,13 +20,13 @@
       .state('elements', {
         url: '/elements',
         templateUrl: 'app/elements/templates/elements.html',
-        controller: 'elementsController',
+        controller: 'ElementsController',
         controllerAs: 'elements'
       })
       .state('login', {
         url: '/login',
         templateUrl: 'app/login/templates/login.html',
-        controller: 'loginController',
+        controller: 'LoginController',
         controllerAs: 'login',
         data : {
           cssClassnames : 'auth'
@@ -36,7 +36,7 @@
       .state('dash', {
         url: '/dash',
         templateUrl: 'app/dashboard/templates/dashboard.html',
-        controller: 'dashboardController',
+        controller: 'DashboardController',
         controllerAs: 'dash',
         abstract: true
       })
@@ -45,7 +45,7 @@
         views: {
           'dashView': {
             templateUrl: 'app/main/templates/main.html',
-            controller: 'mainController',
+            controller: 'MainController',
             controllerAs: 'main'
           }
         }
@@ -55,7 +55,7 @@
         views: {
           'dashView': {
             templateUrl: 'app/modules/templates/learn.html',
-            controller: 'learnController',
+            controller: 'LearnController',
             controllerAs: 'learn'
           }
         }
@@ -65,7 +65,7 @@
         views: {
           'dashView': {
             templateUrl: 'app/modules/templates/video.html',
-            controller: 'learnController',
+            controller: 'LearnController',
             controllerAs: 'learn'
           }
         }
@@ -75,8 +75,18 @@
         views: {
           'dashView': {
             templateUrl: 'app/user/templates/user.html',
-            controller: 'userController',
+            controller: 'UserController',
             controllerAs: 'user'
+          }
+        }
+      })
+      .state('dash.patients-list', {
+        url: '/patients-list',
+        views: {
+          'dashView': {
+            templateUrl: 'app/patients/templates/patients-list.html',
+            controller: 'PatientsController',
+            controllerAs: 'patients'
           }
         }
       });

@@ -1,0 +1,34 @@
+input[type="file"] {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    &.custom-file-input {
+      &.avatar-upload {
+        background: #FFFFFF;
+        margin: 10px 0;
+        &::before {
+          content:'Seleccionar Imagen';
+          background: #239BAB;
+          color:#FFFFFF;
+          text-shadow: none;
+          border: none;
+          line-height: 20px;
+          &:hover {
+            background: #1a7581;
+          }
+          
+        }
+        &:focus {
+            box-shadow: none;
+            outline: none;
+          }
+      }
+    }
+}
+.modal {
+  .cropArea {
+    width: 300px;
+    margin: 0 auto;
+    background: #f7f7f7;
+  }
+}

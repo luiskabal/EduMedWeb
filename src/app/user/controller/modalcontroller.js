@@ -7,7 +7,7 @@
 
   ModalController.$inject = ['$log','$scope'];
   function ModalController($log,$scope) {
-    var vm = this;
+    //var vm = this;
     
     $scope.onLoad = function (e, reader, file, fileList, fileOjects, fileObj) {
       //alert('this is handler for file reader onload event!');
