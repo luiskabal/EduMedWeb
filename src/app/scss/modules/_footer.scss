@@ -1,0 +1,35 @@
+.container-footer {
+  background: #239BAB;
+  padding: 30px 0;
+  color:#fff;
+  
+}
+
+#footer {
+  background: #ffffff;
+  padding: 10px 0;
+  .container {
+    text-align: right;
+    vertical-align: middle;
+    & > div {
+      vertical-align: middle;
+    }
+  }
+  
+}
+.semilla-corfo {
+  background: url(../assets/img/semilla-corfo.jpg);
+  width: 185px;
+  height: 100px;
+  background-size: contain;
+  background-repeat:no-repeat;
+  display:inline-block;
+}
+.corfo {
+  background: url(../assets/img/corfo.png);
+  width: 220px;
+  height: 80px;
+  background-size: contain;
+  background-repeat:no-repeat;
+  display:inline-block;
+}

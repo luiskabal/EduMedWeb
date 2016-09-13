@@ -125,3 +125,74 @@
             slick(infinite='true', slides-to-show='4', slides-to-scroll='1')
               .slick-item(ng-repeat='image in home.images')
                 img(ng-src='{{image.url}}')
+  
+
+
+
+.container-fluid.container-footer
+  .container
+    .col-sm-8
+      .row.form-group
+        .col-xs-3
+          input#firstName.form-control(type='text', name='firstName', placeholder='Nombre', required='')
+        .col-xs-3
+          input#middleName.form-control(type='text', name='firstName', placeholder='Middle Name', required='')
+        .col-xs-4
+          input#lastName.form-control(type='text', name='lastName', placeholder='Last Name', required='')
+      .row.form-group
+        .col-xs-5
+          input.form-control(type='email', name='email', placeholder='Email', required='')
+        .col-xs-5
+          input.form-control(type='email', name='phone', placeholder='Phone', required='')
+      .row.form-group
+        .col-xs-10
+          input.form-control(type='homepage', placeholder='Website URL', required='')
+      .row.form-group
+        .col-xs-10
+          button.btn.btn-default.pull-right Contact Us
+    .col-sm-3.pull-right
+      address
+        strong Iatek, LLC.
+        br
+        |         795 Folsom Ave, Suite 600
+        br
+        |         Newport, RI 94107
+        br
+        |         P: (123) 456-7890
+      address
+        strong Email Us
+        br
+        a(href='mailto:#') first.last@example.com
+  // /row
+  .container
+    .col-sm-8.col-sm-offset-2.text-center
+      h2 Beautiful Bootstrap Templates
+      hr
+      h4
+        | We love templates. We love Bootstrap.
+      p
+        | Get more free templates like this at the 
+        a(href='http://bootply.com') Bootstrap Playground
+        | , Bootply.
+      hr
+      ul.list-inline.center-block
+        li
+          a(href='http://facebook.com/bootply')
+            img(src='/assets/example/soc_fb.png')
+        li
+          a(href='http://twitter.com/bootply')
+            img(src='/assets/example/soc_tw.png')
+        li
+          a(href='http://google.com/+bootply')
+            img(src='/assets/example/soc_gplus.png')
+        li
+          a(href='http://pinterest.com/in1')
+            img(src='/assets/example/soc_pin.png')
+    // /col
+  // /container
+  // /wrap
+.container-fluid
+  #footer
+    .container
+      .semilla-corfo
+      .corfo

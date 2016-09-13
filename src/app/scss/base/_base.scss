@@ -1715,3 +1715,29 @@ videogular {
 table.table-patients {
 	width: 100%;
 }
+
+.nav-tabs > li > a {
+	  font-size: 17px;
+		padding: 10px 40px;
+		color:#a7a7a7;
+}
+.nav-tabs > li.active  {
+	border-bottom: 3px solid #239BAB; 
+}
+
+
+.nav-tabs > li.active > a {
+	  background: #239BAB;
+		background-color: #F4F3F0;
+		border:none;
+		color:#239BAB;
+		font-size: 17px;
+		border-radius: 0;
+		&:hover {
+			border:none;
+			color:#239BAB;
+		}
+}
+.row.tab-row {
+	padding-top: 20px;
+}
