@@ -23,27 +23,34 @@
               td.col-xs-1
                 a(href='')
                   i.ion-plus
-            tr(ng-repeat-end='', ng-show='patients.active === u.id', ng-class-odd="'odd'")
+            tr.tr-info(ng-repeat-end='', ng-show='patients.active === u.id', ng-class-odd="'odd'")
               td
               td(colspan='4')
                 .row
-                  .col-xs-12
-                    
-                  .col-md-3.col-xs-6.small
-                    h2 Prevenir 1
-                    div
-                      .col
-                        span Completado
-                        span.porcent 3
-                        small Modulos
-                      .col
-                        span Reitentos
-                        span.porcent 3
-                        small Intentos 
-                      .col
-                        span Tiempo
-                        span.porcent 3
-                        small semana 
+                  .col-xs-8
+                    .item.modulo-history
+                      .collapse-detalle
+                        //i.icon-collapse(ng-class="{'ion-chevron-up': active, 'ion-chevron-down': !active}")
+                        p Guía Actual
+                        h3 Artritis Psoriasica
+                        h4 Introducción
+                        .cont-progress
+                          span 60%
+                          .progress-porcent(style="width:60%")
+                          
+                      .info-history
+                        .col
+                          span Completado
+                          span.porcent 3
+                          small Modulos
+                        .col
+                          span Reitentos
+                          span.porcent 4
+                          small Intentos
+                        .col
+                          span Tiempo
+                          span.porcent 1
+                          small Semana                    
       // /row
       .row
         hr

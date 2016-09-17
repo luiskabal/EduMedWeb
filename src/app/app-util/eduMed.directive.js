@@ -3,7 +3,8 @@
 
     angular
         .module('eduMed')
-        .directive('routeCssClassnames', routeCssClassnames);
+        .directive('routeCssClassnames', routeCssClassnames)
+        .directive('goClick', goClick);
 
     routeCssClassnames.$inject = ['$rootScope','$log'];
     function routeCssClassnames($rootScope,$log) {
@@ -45,4 +46,40 @@
     function routeCssClassnamesController () {
         
     }
+
+    goClick.$inject = ['$location'];
+    function goClick($location) {
+        // Usage:
+        //
+        // Creates:
+        //
+        var directive = {
+            link: link,
+            restrict: 'A',
+            scope: {
+            }
+        };
+        return directive;
+        
+        function link(scope, element, attrs) {
+            var path;
+
+            attrs.$observe( 'goClick', function (val) {
+                path = val;
+            });
+
+            element.bind( 'click', function () {
+                scope.$apply( function () {
+                    $location.path( path );
+                });
+            });
+        }
+    }
+    /* @ngInject */
+    function ControllerController () {
+        
+    }
+
+
+
 })();
