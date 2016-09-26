@@ -126,6 +126,35 @@ $color-icon:#000;
 
     }
   }
+  &.modulo-history-complete {
+    background: transparent!important;
+    .col {
+      background: #ffffff!important;
+      &.col {
+        background: #ffffff!important;
+        span,
+        span.porcent,
+        small {
+          color: #239bab;
+        }
+      }
+    }
+    .info-history {
+      background: #ffffff!important;
+       
+    }
+    h4 {
+        margin-bottom: 10px;
+        
+      }
+    .collapse {
+      h4 {
+        font-size: 14px;
+        
+      }
+
+    }
+  }
 }
 
 .info-history {
@@ -184,6 +213,7 @@ $color-icon:#000;
       }
     }
   }
+  
 }
 
 progress[value] {
@@ -221,4 +251,37 @@ progress[value="3"] {
       background-size: 120px;
       margin: 0 auto;
       background-repeat: no-repeat;
+}
+
+.row-datos {
+  padding: 0;
+  letter-spacing: -.31em;
+  text-rendering: optimizespeed;
+  display: -webkit-flex;
+  -webkit-flex-flow: row wrap;
+  display: -ms-flexbox;
+  -ms-flex-flow: row wrap;
+  -ms-align-content: flex-start;
+  -webkit-align-content: flex-start;
+  align-content: flex-start;
+  .col-datos {
+    text-align: left;
+    display: inline-block;
+    zoom: 1;
+    letter-spacing: normal;
+    word-spacing: normal;
+    vertical-align: top;
+    text-rendering: auto;
+    padding: 0px;
+    width: 33.3%;
+    &:first-child {
+      width: 100px;
+      font-weight: bold;
+    }
+    p {
+      margin: 0;
+      color: #49676B;
+      font-size: 16px;
+    }
+  }
 }

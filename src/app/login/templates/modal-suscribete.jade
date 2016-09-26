@@ -1,0 +1,31 @@
+.modal(ng-controller="LoginController as login")
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(type='button',ng-click="$hide()") ×
+        h3.modal-title Seleccionar Avatar
+      .modal-body
+        form(role='form')
+          .form-group
+            label.control-label(for='inputEmail') Nombre
+            input#inputName.form-control(placeholder='Nombre (ej. Juan Rios)', required='', type='text')
+          .form-group
+            label.control-label(for='inputEmail') Email
+            input#inputEmail.form-control(placeholder='Email (ej. test@test.com)', required='', type='email')
+          .form-group
+            label.control-label(for='inputPassword') Contraseña
+            input#inputPassword.form-control(placeholder='Contraseña', required='', type='password')
+          .form-group
+            label.control-label(for='inputEmail') Fecha de Nacimiento
+            input#inputFecha.form-control(placeholder='Fecha (ej. dd/mm/aaaa)', required='', type='text')
+          form-group
+            label.control-label(for='inputEmail') Institución:
+            select.form-control
+              option Hospital Sotero del Rio
+              option Clinica Las Condes
+          .form-group
+            label.control-label(for='inputEmail') Codigo:
+            input#inputFecha.form-control(placeholder='Codigo', required='', type='text')
+          
+      .modal-footer
+        button.btn.btn-primary.btn-large.btn-block(type='submit', ng-click="login.goDash()") Enviar

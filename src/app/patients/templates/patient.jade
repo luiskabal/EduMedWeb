@@ -4,63 +4,80 @@
       // left column
       .col-md-3
         .cont-avatar
-          .avatar(ng-click="user.showModal()")
+          .avatar
             img(ng-src="{{user.picture}}")
       // edit form column
       .col-md-9.personal-info
-        .alert.alert-info.alert-dismissable
-          a.panel-close.close(data-dismiss='alert') ×
-          i.fa.fa-coffee
-          |  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        h3 Personal info
-        form.form-horizontal(role='form')
-          .form-group
-            label.col-lg-3.control-label Nombres:
-            .col-lg-8
-              input.form-control(type='text', value='Jane')
-          .form-group
-            label.col-lg-3.control-label Apellidos:
-            .col-lg-8
-              input.form-control(type='text', value='Bishop')
-          .form-group
-            label.col-lg-3.control-label Edad:
-            .col-lg-8
-              input.form-control(type='text', value='')
-          .form-group
-            label.col-lg-3.control-label Email:
-            .col-lg-8
-              input.form-control(type='text', value='nombre@mail.com')
-          .form-group
-            label.col-lg-3.control-label Intereses:
-            .col-lg-8
-              .ui-select
-                select#user_time_zone.form-control
-                  option(value='artritis',selected='selected') Artritis Psoriasica
-                  option(value='artritis') Artritis Psoriasica
-                  option(value='artritis') Artritis Psoriasica
-          .form-group
-            label.col-lg-3.control-label Institución:
-            .col-lg-8
-              .ui-select
-                select#user_time_zone.form-control
-                  option(value='lascondes',selected='selected') Clinica las Condes
-                  option(value='soterodelrio') Hospital Sotero del Rio
-          .form-group
-            label.col-lg-3.control-label Username:
-            .col-lg-8
-              input.form-control(type='text', value='janeuser')
-          .form-group
-            label.col-lg-3.control-label Password:
-            .col-lg-8
-              input.form-control(type='password', value='11111122333')
-          .form-group
-            label.col-lg-3.control-label Confirmar password:
-            .col-lg-8
-              input.form-control(type='password', value='11111122333')
-          .form-group
-            label.col-lg-3.control-label
-            .col-lg-8
-              input.btn.btn-primary(type='button', value='Guardar Cambios')
-              span
-              input.btn.btn-warning(type='reset', value='Cancel')
-  hr
+        h2 Luis Ramos Illanes
+        .row-datos
+          .col-datos
+            p Edad
+          .col-datos
+            p 34
+        .row-datos
+          .col-datos
+            p Institución
+          .col-datos
+            p Clinica del Dr Guti
+          
+          
+        .item.modulo-history
+          .collapse-detalle
+            p Guía Actual
+            h3 Artritis Psoriasica
+            h4 Introducción
+            .cont-progress
+              span 60%
+              .progress-porcent(style="width:100%")
+              
+          .info-history
+            .col
+              span Completado
+              span.porcent 3
+              small Modulos
+            .col
+              span Reitentos
+              span.porcent 4
+              small Intentos
+            .col
+              span Tiempo
+              span.porcent 1
+              small Semana
+        h2 Historial
+        .item.modulo-history.modulo-history-complete
+          .collapse-detalle
+            h3 Artritis Psoriasica
+            h4 Introducción
+          .info-history
+            .col
+              span Completado
+              span.porcent 4
+              small Modulos
+            .col
+              span Reitentos
+              span.porcent 5
+              small Intentos
+            .col
+              span Tiempo
+              span.porcent 2
+              small Semana
+        .item.modulo-history.modulo-history-complete
+          .collapse-detalle
+            h3 Artritis Psoriasica
+            h4 Introducción
+          .info-history
+            .col
+              span Completado
+              span.porcent 4
+              small Modulos
+            .col
+              span Reitentos
+              span.porcent 5
+              small Intentos
+            .col
+              span Tiempo
+              span.porcent 2
+              small Semana
+          
+          
+      

@@ -5,8 +5,8 @@
         .module('eduMed')
         .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$log','$state'];
-    function LoginController($log,$state) {
+    LoginController.$inject = ['$scope','$log','$state','$modal'];
+    function LoginController($scope,$log,$state,$modal) {
         var vm = this;
 
         vm.goDash = function() {
@@ -14,10 +14,15 @@
         }
         
 
-        activate();
+        var myOtherModal = $modal({ templateUrl: 'app/login/templates/modal-suscribete.html', show: false});
+        // Show when some event occurs (use $promise property to ensure the template has been loaded)
+        $scope.showModal = function() {
+            myOtherModal.$promise.then(myOtherModal.show);
+        };
+        $scope.hideModal = function() {
+            $log.log('ocultar');
+            myOtherModal.$promise.then(myOtherModal.hide);
+        };
 
-        ////////////////
-
-        function activate() { }
     }
 })();
