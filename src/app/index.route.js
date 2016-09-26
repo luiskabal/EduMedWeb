@@ -89,6 +89,16 @@
             controllerAs: 'patients'
           }
         }
+      })
+      .state('dash.patient', {
+        url: '/patient',
+        views: {
+          'dashView': {
+            templateUrl: 'app/patients/templates/patient.html',
+            controller: 'PatientsController',
+            controllerAs: 'patients'
+          }
+        }
       });
 
     $urlRouterProvider.otherwise('/');
