@@ -83,7 +83,7 @@
             	function(relatedGuides){
             		vm.relatedGuides =[];
             		
-                    if(relatedGuides.idGuide==vm.guide.idGuide){
+                    if(relatedGuides.idGuide!=vm.guide.idGuide){
                     console.log(relatedGuides);
                       return vm.relatedGuides=relatedGuides;
                     }
