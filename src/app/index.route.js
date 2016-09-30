@@ -51,7 +51,7 @@
         }
       })
       .state('dash.learn', {
-        url: '/aprender',
+        url: '/aprender/:id',
         views: {
           'dashView': {
             templateUrl: 'app/modules/templates/learn.html',

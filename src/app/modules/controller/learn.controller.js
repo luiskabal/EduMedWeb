@@ -5,10 +5,13 @@
     .module('eduMed')
     .controller('LearnController', LearnController);
 
-  LearnController.$inject = ['$sce'];
-  function LearnController($sce) {
+ 
+  LearnController.$inject = ['$sce','$scope','$state','$stateParams','$rootScope','guidesFactory','commonService'];
+
+  function LearnController($sce,$scope,$state,$stateParams,$rootScope,guidesFactory,commonService) {
     var vm = this;
-    
+    vm.guide = {};
+    vm.relatedGuides = [];
     vm.API = null;
 		vm.onPlayerReady = function(API) {
 			console.log(API);
@@ -30,6 +33,22 @@
             }
            
 		};
+	$scope.$watch('learn.loadGuide',function () {
+   
+         var idGuide = $stateParams.id;
+            loadGuide(idGuide);
+
+    });
+	vm.getImage = function(itemNuevo){
+            itemNuevo = itemNuevo || vm.guide;
+            return commonService.getFileUrl(itemNuevo.pathImgPreview);
+        };
+    vm.isComplete = function(itemNuevo){
+            itemNuevo= itemNuevo|| vm.guide;            
+            return itemNuevo.avance && itemNuevo.avance.completado;
+
+        };
+
 
     vm.onCompleteVideo = function() {
 			console.log("on complete 1");
@@ -38,6 +57,18 @@
 				//template: 'modules/modulos/templates/modal.html',
 				
 		};
+
+	function loadGuide(idGuide){
+            guidesFactory.getGuide(idGuide).then(
+                function(guide){
+                  	vm.guide = guide;
+                	loadRelatedGuides(vm.guide.idEnfermedad);
+                },
+                function(e){
+                    console.error(e);
+                }
+            );
+        }
 		
 		vm.testRun = false;
 		vm.starTest = function() {
@@ -47,7 +78,20 @@
 		vm.okTest = function() {
 			vm.testRun = false;
 		}
-
-    
-  }
+  function loadRelatedGuides(idAffliction){
+            guidesFactory.getRelatedGuides(idAffliction).then(
+            	function(relatedGuides){
+            		vm.relatedGuides =[];
+            		
+                    if(relatedGuides.idGuide==vm.guide.idGuide){
+                    console.log(relatedGuides);
+                      return vm.relatedGuides=relatedGuides;
+                    }
+                },
+                function(e){
+                    console.error(e);
+                }
+            );
+        }
+    }
 })();

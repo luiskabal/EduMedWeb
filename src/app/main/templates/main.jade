@@ -27,7 +27,7 @@
       .col-sm-4.col-xs-6(ng-repeat="itemNuevo in main.newGuides")
         .panel.panel-default
           .panel-thumbnail.video
-            img.img-responsive(ng-src="{{ main.getImage(itemNuevo)}}")
+            img.img-responsive(ng-src="{{main.getImage(itemNuevo)}}")
           .panel-body
             h3(ng-bind="itemNuevo.titulo") 
             h4(ng-bind="itemNuevo.descripcion")
@@ -47,8 +47,7 @@
             .progreso
               .mod(ng-repeat="mod in itemNuevo.avance.modulos", ng-class="{ok: mod.completado }")
             p
-              button.btn.btn-primary.btn-block(type='button', ui-sref="dash.learn") Ver Guía
-      
+              button.btn.btn-primary.btn-block(type='button',ng-click="main.toLearn(itemNuevo.idGuia)") Ver Guía           
           
           
     .row(ng-show="main.currentTab == 'interes'",ng-class="")

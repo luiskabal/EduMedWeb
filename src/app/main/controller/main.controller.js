@@ -22,13 +22,11 @@
     vm.currentTab = 'nuevas';
 
     $scope.$watch('main.currentTab',function () {
-      // body...
-      console.log(vm.currentTab);
+   
       loadGuides(vm.currentTab);
     });
 
     loadGuides(vm.currentTab);
-
 
     vm.onClickTab = function (tab) {
         vm.currentTab = tab.url;
@@ -40,38 +38,38 @@
 
     vm.isComplete = function(guide){
             return guide.avance && guide.avance.completado;
-        };
-     vm.getImage = function(guide){
+        }
+    vm.getImage = function(guide){
             return commonService.getFileUrl(guide.pathImgPreview);
+        }
+    vm.toLearn = function(idGuide) {
+         console.log(idGuide);
+            console.log('CULPS OF ETERNITY');
+           $state.go(
+                'dash.learn',
+                {
+                    id: idGuide
+                }
+            );
         };
-
-    function loadGuides(current){
+  function loadGuides(current){
       var response = current ==='nuevas' ? guidesFactory.getNewGuides(): guidesFactory.getGuidesOfInterest() ;
       response.then(
-
-            function(data){
+        function(data){
               if(current=='nuevas'){
                 vm.newGuides=[];
                 vm.newGuides=data;
-                console.log("Guias Llamadas "+vm.newGuides);
-          
               }else{
                  vm.guidesOfInterest=[];
                  vm.guidesOfInterest=data;
-              console.log("Guias Llamadas "+vm.guidesOfInterest);
               }
-              console.log("Pestaña "+current);
-              
-              
-
             },
             function(e){
               console.error(e);
             }
         );
     }
-
-  vm.searchGuides = function (){
+    vm.searchGuides = function (){
 console.log(vm.currentTab);
 console.log(vm.textoBuscar);
 //recorrer cada guia y recorrer sus tags
