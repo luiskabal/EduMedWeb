@@ -2,6 +2,7 @@
   "name": "eduMed",
   "version": "0.0.0",
   "dependencies": {
+    "gulp": "^3.9.1",
     "gulp-install": "^0.6.0"
   },
   "scripts": {

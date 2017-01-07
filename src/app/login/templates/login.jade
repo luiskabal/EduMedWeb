@@ -4,25 +4,30 @@
       .panel.panel-default.panel-login
         .panel-body
           .content-logo-login
-            .logo-login 
-          form(role='form')
-            .form-group
-              label.control-label(for='inputEmail') Email
-              input#inputEmail.form-control(placeholder='Email (ej. test@test.com)', required='', type='email')
-            .form-group
-              label.control-label(for='inputPassword') Contraseña
-              input#inputPassword.form-control(placeholder='Contraseña', required='', type='password')
-            .form-group             
+            .logo-login
+          form(role='form',name='form')
+            .form-group(ng-class="{'has-error':(form.inputUser.$error.required && form.inputUser.$touched) || (!form.inputUser.$error.required && form.inputUser.$touched && form.inputUser.$error.email) }")
+              label.control-label Email
+              input.form-control(placeholder='Email (ej. test@test.com)',ng-model='login.user', required='', type='email', name='inputUser', autocomplete='off')
+              span.help-block(ng-show='form.inputUser.$error.required && form.inputUser.$touched') Ingrese un E-mail
+              span.help-block(ng-show='!form.inputUser.$error.required && form.inputUser.$touched && form.inputUser.$error.email') E-mail no valido
+
+            .form-group(ng-class="{'has-error':(form.inputPassword.$error.required && form.inputPassword.$touched) || (!form.inputPassword.$error.required && login.errorLogin)}")
+              label.control-label Contraseña
+              input.form-control(type='password', placeholder='•••••••',name='inputPassword',ng-model='login.password',required='')
+              span.help-block(ng-show='form.inputPassword.$error.required && form.inputPassword.$touched') Ingrese una Contraseña
+              span.help-block(ng-show='!form.inputPassword.$error.required && login.errorLogin') E-mail o Contraseña no es válida
+            //.form-group
               .checkbox
                 label
                   input(type='checkbox')
                   | Recuérdame en este equipo
-            .form-group              
-              button.btn.btn-primary.btn-large.btn-block(type='submit', ng-click="login.goDash()") Iniciar Sesion
+            .form-group
+              button.btn.btn-primary.btn-large.btn-block(ng-click="login.login()", ng-disabled='form.inputUser.$error.required || form.inputUser.$error.email || form.inputPassword.$error.required') Iniciar Sesion
             .form-group.last
               button.btn.btn-warning.btn-large.btn-block(type='button', ng-click="showModal()") Suscribete
         .panel-footer
           p.tcenter
             | has olvidado la contraseña de EduMed.
-            br 
+            br
             a(href='#')  Recuperar contraseña

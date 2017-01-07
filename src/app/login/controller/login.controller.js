@@ -9,10 +9,11 @@
     function LoginController($scope,$log,$state,$modal) {
         var vm = this;
 
-        vm.goDash = function() {
-            $state.go('dash.main');
-        }
-        
+        vm.login = function() {
+            console.log(vm.user + ' '+ vm.password);
+            //$state.go('dash.main');
+        };
+
 
         var myOtherModal = $modal({ templateUrl: 'app/login/templates/modal-suscribete.html', show: false});
         // Show when some event occurs (use $promise property to ensure the template has been loaded)
@@ -26,3 +27,4 @@
 
     }
 })();
+
