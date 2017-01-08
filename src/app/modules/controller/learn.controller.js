@@ -18,6 +18,15 @@
 			vm.API = API;
 		};
 
+    vm.toContent = function(idGuide) {
+      console.log('toContent: ' + idGuide);
+      $state.go(
+        'app.modulo',
+        {
+          id: idGuide
+        }
+      );
+    };
 
 		vm.config = {
 

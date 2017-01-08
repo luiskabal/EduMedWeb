@@ -26,7 +26,7 @@
               .mod(ng-repeat="mod in itemNuevo.avance.modulos", ng-class="{ok: mod.completado }")
 
             p
-              button.btn.btn-primary.btn-block(type='button', ui-sref="dash.video") Ver Modulo
+              button.btn.btn-primary.btn-block(type='button', ng-click="learn.toContent(itemNuevo.guide.idGuia)") Ver Modulo
 
       .col-md-4.col-xs-12
         h2.titulo Guias Relacionadas
