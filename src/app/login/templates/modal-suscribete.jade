@@ -1,31 +1,43 @@
-.modal(ng-controller="LoginController as login")
+.modal(ng-controller="RegistrarController as registrar")
   .modal-dialog
     .modal-content
       .modal-header
-        button.close(type='button',ng-click="$hide()") ×
-        h3.modal-title Seleccionar Avatar
+        button#botonCerrar.close(type='button',ng-click="$hide()") ×
+        h3.modal-title Registro de Usuario
       .modal-body
-        form(role='form')
-          .form-group
-            label.control-label(for='inputEmail') Nombre
-            input#inputName.form-control(placeholder='Nombre (ej. Juan Rios)', required='', type='text')
-          .form-group
-            label.control-label(for='inputEmail') Email
-            input#inputEmail.form-control(placeholder='Email (ej. test@test.com)', required='', type='email')
-          .form-group
+        form(role='form',name='form')
+          .form-group(ng-class="{'has-error':(form.inputNombre.$error.required && form.inputNombre.$touched)}")
+            label.control-label(for='inputNombre') Nombre
+            input#inputNombre.form-control(type='text', placeholder='Nombre',name="inputNombre",ng-model="registrar.nombre", required='')
+            span.help-block(ng-show='form.inputNombre.$error.required && form.inputNombre.$touched') Ingrese un Nombre
+          .form-group(ng-class="{'has-error':(form.inputMail.$error.required && form.inputMail.$touched) || (!form.inputMail.$error.required && form.inputMail.$touched && form.inputMail.$error.email) }")
+            label.control-label(for='inputMail') Email
+            input#inputMail.form-control(type='email', placeholder='mail@mail.com',name="inputMail",ng-model="registrar.email", required='')
+            span.help-block(ng-show='form.inputMail.$error.required && form.inputMail.$touched') Ingrese un E-mail
+            span.help-block(ng-show='!form.inputMail.$error.required && form.inputMail.$touched && form.inputMail.$error.email') E-mail no valido
+          .form-group(ng-class="{'has-error':(form.inputPassword.$error.required && form.inputPassword.$touched)}")
             label.control-label(for='inputPassword') Contraseña
-            input#inputPassword.form-control(placeholder='Contraseña', required='', type='password')
-          .form-group
-            label.control-label(for='inputEmail') Fecha de Nacimiento
-            input#inputFecha.form-control(placeholder='Fecha (ej. dd/mm/aaaa)', required='', type='text')
-          form-group
-            label.control-label(for='inputEmail') Institución:
-            select.form-control
-              option Hospital Sotero del Rio
-              option Clinica Las Condes
-          .form-group
-            label.control-label(for='inputEmail') Codigo:
-            input#inputFecha.form-control(placeholder='Codigo', required='', type='text')
-          
+            input#inputPassword.form-control(type='password', placeholder='•••••••',name="inputPassword",ng-model="registrar.password", required='')
+            span.help-block(ng-show='form.inputPassword.$error.required && form.inputPassword.$touched') Ingrese una Contraseña
+          .form-group(ng-class="{'has-error':(form.inputFechaNac.$error.required && form.inputFechaNac.$touched)}")
+            label.control-label(for='inputFechaNac') Fecha de Nacimiento
+            input#inputFechaNac.form-control(type='date', placeholder='fecha',name="inputFechaNac",ng-model="registrar.fechaNacimiento", required='')
+            span.help-block(ng-show='form.inputFechaNac.$error.required && form.inputFechaNac.$touched') Ingrese Fecha de Nacimiento
+          .form-group(ng-class="{'has-error':(form.selectGenero.$error.required && form.selectGenero.$touched)}")
+            label.control-label(for='selectGenero') Genero:
+            select.form-control(ng-model="registrar.genero",ng-options="option.nombre for option in registrar.generos track by option.id",name="selectGenero",required='')
+            span.help-block(ng-show='form.selectGenero.$error.required && form.selectGenero.$touched') Seleccione Genero
+          .form-group(ng-class="{'has-error':(form.selectInstitucion.$error.required && form.selectInstitucion.$touched)}")
+            label.control-label(for='selectInstitucion') Institución:
+            select.form-control(ng-model="registrar.institucion",ng-options="option.nombre for option in registrar.instituciones track by option.id",name="selectInstitucion",required='')
+            span.help-block(ng-show='form.selectInstitucion.$error.required && form.selectInstitucion.$touched') Seleccione una Institución
+          .form-group(ng-class="{'has-error':(form.selectIsapre.$error.required && form.selectIsapre.$touched)}")
+            label.control-label(for='selectIsapre') Isapre:
+            select.form-control(ng-model="registrar.isapre",ng-options="option.nombre for option in registrar.isapres track by option.id",name="selectIsapre",required='')
+            span.help-block(ng-show='form.selectIsapre.$error.required && form.selectIsapre.$touched') Seleccione una Isapre
+          .form-group(ng-class="{'has-error':(form.inputCodigo.$error.required && form.inputCodigo.$touched)}")
+            label.control-label(for='inputCodigo') Codigo:
+            input#inputCodigo.form-control(type='text', placeholder='XXXXXXXXXXXX',ng-model="registrar.codigoAcceso",name="inputCodigo",required='')
+            span.help-block(ng-show='form.inputCodigo.$error.required && form.inputCodigo.$touched') Seleccione una Institución
       .modal-footer
-        button.btn.btn-primary.btn-large.btn-block(type='submit', ng-click="login.goDash()") Enviar
+        button.btn.btn-primary.btn-large.btn-block(ng-click="registrar.enviarRegistro()",ng-disabled='form.inputMail.$error.required || form.inputMail.$error.email || form.inputPassword.$error.required || form.inputNombre.$error.required || form.inputFechaNac.$error.required || form.selectGenero.$error.required || form.selectIsapre.$error.required || form.selectInstitucion.$error.required || form.inputCodigo.$error.required') Enviar
