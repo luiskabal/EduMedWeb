@@ -59,7 +59,9 @@
             }
             //hideLoading();
             //if($state.current.name);
-            $state.go('dash.main');
+            if($state.current.name == 'login'){
+              $state.go('dash.main');
+            }
           },
           function (e) {
             //hideLoading()

@@ -1,6 +1,6 @@
 .container-fluid
   .container.logged-container
-    .row   
+    .row
       .col-xs-12
         ul.nav.nav-tabs
           li(ng-repeat="tab in main.tabs",ng-class="{active:main.isActiveTab(tab.url)}", ng-click="main.onClickTab(tab)")
@@ -13,15 +13,15 @@
               input.form-control.input-lg(type='text', name='textoBuscar',ng-model="main.textoBuscar" ,placeholder='Buscar Enfermedad' required)
               span.input-group-btn
                 button.btn.btn-lg.btn-primary(type='button' ng-click='main.searchGuides()') Buscar
-        
+
 
 
       .row
       .col-xs-12(ng-hide="(main.currentTab == 'nuevas' && main.newGuides.length>0) || (main.currentTab == 'interes' && main.guidesOfInterest.length>0)")
         .mensaje.info
           .icono.icono-triste
-          p Actualmente no tiene ningún modulo configurado para visualizarse. 
-            | Para configurar un modulo, seleccione uno de los enlaces disponibles.           
+          p Actualmente no tiene ningún modulo configurado para visualizarse.
+            | Para configurar un modulo, seleccione uno de los enlaces disponibles.
 
     .row(ng-show="main.currentTab == 'nuevas'",ng-class="")
       .col-sm-4.col-xs-6(ng-repeat="itemNuevo in main.newGuides")
@@ -29,51 +29,51 @@
           .panel-thumbnail.video
             img.img-responsive(ng-src="{{main.getImage(itemNuevo)}}")
           .panel-body
-            h3(ng-bind="itemNuevo.titulo") 
+            h3(ng-bind="itemNuevo.titulo")
             h4(ng-bind="itemNuevo.descripcion")
             .modulo-info
-              | Estado:   
+              | Estado:
               span.estado(ng-bind="main.isComplete(itemNuevo)? 'completo' : 'incompleto'",
                         ng-class="{ok: main.isComplete(itemNuevo)}")
-            .fecha-info
+            //.fecha-info
               i.icon.ion-android-calendar
               .fecha
-                span 
-                  strong Iniciado: 
-                  | {{itemNuevo.fechaCreacion | date:'dd/MM/yyyy'}}                  
-                span 
-                  //strong Finalizado:  
-                  
+                //span
+                  strong Iniciado:
+                  | {{itemNuevo.fechaCreacion | date:'dd/MM/yyyy'}}
+                //span
+                  //strong Finalizado:
+
             .progreso
               .mod(ng-repeat="mod in itemNuevo.avance.modulos", ng-class="{ok: mod.completado }")
             p
-              button.btn.btn-primary.btn-block(type='button',ng-click="main.toLearn(itemNuevo.idGuia)") Ver Guía           
-          
-          
+              button.btn.btn-primary.btn-block(type='button',ng-click="main.toLearn(itemNuevo.idGuia)") Ver Guía
+
+
     .row(ng-show="main.currentTab == 'interes'",ng-class="")
       .col-sm-4.col-xs-6(ng-repeat="itemNuevo in main.guidesOfInterest")
         .panel.panel-default
           .panel-thumbnail.video
             img.img-responsive(ng-src="{{ main.getImage(itemNuevo)}}")
           .panel-body
-            h3 (ng-bind="itemNuevo.titulo")
-            h4 (ng-bind="itemNuevo.descripcion")
+            h3(ng-bind="itemNuevo.titulo")
+            h4(ng-bind="itemNuevo.descripcion")
             .modulo-info
-              | Estado:   
+              | Estado:
               span.estado(ng-bind="main.isComplete(itemNuevo)? 'completo' : 'incompleto'",
                         ng-class="{ok: main.isComplete(itemNuevo)}")
-            .fecha-info
+            //.fecha-info
               i.icon.ion-android-calendar
               .fecha
-                span 
-                  strong Iniciado: 
-                  | {{itemNuevo.fechaCreacion | date:'dd/MM/yyyy'}} 
-                span 
-                  strong Finalizado:  
+                span
+                  strong Iniciado:
+                  | {{itemNuevo.fechaCreacion | date:'dd/MM/yyyy'}}
+                span
+                  strong Finalizado:
                   | -
             .progreso
               .mod(ng-repeat="mod in itemNuevo.avance.modulos", ng-class="{ok: mod.completado }")
             p
               button.btn.btn-primary.btn-block(type='button', ui-sref="dash.learn") Ver Guía
-    
-   
+
+
