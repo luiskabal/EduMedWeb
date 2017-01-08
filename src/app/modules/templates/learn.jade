@@ -10,24 +10,24 @@
             h3 {{itemNuevo.titulo}}
             h4  {{itemNuevo.descripcion}}
             .modulo-info
-              | Estado:   
+              | Estado:
               span.estado(ng-bind="learn.isComplete(itemNuevo)? 'completo' : 'incompleto'",
                         ng-class="{ok: learn.isComplete(itemNuevo)}")
-            .fecha-info
+            //.fecha-info
               i.icon.ion-android-calendar
               .fecha
-                span 
-                  strong Iniciado: 
+                span
+                  strong Iniciado:
                   | {{itemNuevo.fechaCreacion | date:'dd/MM/yyyy'}}
-                span 
-                 // strong Finalizado:  
-                 
+                span
+                 // strong Finalizado:
+
             .progreso
               .mod(ng-repeat="mod in itemNuevo.avance.modulos", ng-class="{ok: mod.completado }")
 
             p
               button.btn.btn-primary.btn-block(type='button', ui-sref="dash.video") Ver Modulo
-     
+
       .col-md-4.col-xs-12
         h2.titulo Guias Relacionadas
         .row
@@ -39,22 +39,22 @@
                 h3 {{rg.titulo}}
                 h4 {{rg.descripcion}}
                 .modulo-info
-                  | Estado:   
+                  | Estado:
                   span.estado(ng-bind="learn.isComplete(rg)? 'completo' : 'incompleto'",
                         ng-class="{ok: learn.isComplete(rg)}")
-                .fecha-info
+                //.fecha-info
                   i.icon.ion-android-calendar
                   .fecha
-                    span 
-                      strong Iniciado: 
-                      | {{rg.fechaCreacion | date:'dd/MM/yyyy'}} 
-                    span 
-                     // strong Finalizado:  
-                     
+                    span
+                      strong Iniciado:
+                      | {{rg.fechaCreacion | date:'dd/MM/yyyy'}}
+                    span
+                     // strong Finalizado:
+
                 .progreso
                   .mod(ng-repeat="mod in rg.avance.modulos", ng-class="{ok: mod.completado }")
 
                 p
                   button.btn.btn-primary.btn-block(type='button') Ver Modulo
-      
-        
+
+
