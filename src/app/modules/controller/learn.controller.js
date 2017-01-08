@@ -5,7 +5,7 @@
     .module('eduMed')
     .controller('LearnController', LearnController);
 
- 
+
   LearnController.$inject = ['$sce','$scope','$state','$stateParams','$rootScope','guidesFactory','commonService'];
 
   function LearnController($sce,$scope,$state,$stateParams,$rootScope,guidesFactory,commonService) {
@@ -17,10 +17,10 @@
 			console.log(API);
 			vm.API = API;
 		};
- 
+
 
 		vm.config = {
-			
+
             preload: "none",
             sources: [
                 {src: $sce.trustAsResourceUrl("assets/video/La_artritis_psoriasica.mp4"), type: "video/mp4"}
@@ -31,10 +31,10 @@
             plugins: {
          		poster: "assets/video/La_artritis_psoriasica.jpg"
             }
-           
+
 		};
 	$scope.$watch('learn.loadGuide',function () {
-   
+
          var idGuide = $stateParams.id;
             loadGuide(idGuide);
 
@@ -44,7 +44,7 @@
             return commonService.getFileUrl(itemNuevo.pathImgPreview);
         };
     vm.isComplete = function(itemNuevo){
-            itemNuevo= itemNuevo|| vm.guide;            
+            itemNuevo= itemNuevo|| vm.guide;
             return itemNuevo.avance && itemNuevo.avance.completado;
 
         };
@@ -53,9 +53,9 @@
     vm.onCompleteVideo = function() {
 			console.log("on complete 1");
 
-		
+
 				//template: 'modules/modulos/templates/modal.html',
-				
+
 		};
 
 	function loadGuide(idGuide){
@@ -69,7 +69,7 @@
                 }
             );
         }
-		
+
 		vm.testRun = false;
 		vm.starTest = function() {
 			vm.testRun = true;
@@ -82,7 +82,7 @@
             guidesFactory.getRelatedGuides(idAffliction).then(
             	function(relatedGuides){
             		vm.relatedGuides =[];
-            		
+
                     if(relatedGuides.idGuide!=vm.guide.idGuide){
                     console.log(relatedGuides);
                       return vm.relatedGuides=relatedGuides;
