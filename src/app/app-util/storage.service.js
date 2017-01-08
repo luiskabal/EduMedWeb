@@ -6,9 +6,11 @@
 
   angular
     .module('eduMed')
-    .factory('storageService', storageService);
+    .factory('storageService', storageService)
+    .service('validateService',validateService);
 
   storageService.$inject = ['$window'];
+  validateService.$inject = ['storageService','$state','profileFactory','commonService','$rootScope'];
   function storageService($window) {
 
     return {
@@ -35,6 +37,40 @@
     function setToken(token){
       $window.localStorage['token'] = token;
       return true
+    }
+  }
+
+  function validateService(storageService,$state,profileFactory,commonService,$rootScope){
+    return {
+      isValid : isValid
+    };
+
+    function isValid(){
+      if (!angular.isUndefined(storageService.getToken())) {
+        //showLoading();
+        var callPerfil = profileFactory.getProfile();
+        callPerfil.then(
+          function (data) {
+            $rootScope.perfil = data;
+            if (!angular.isUndefined(storageService.getAvatar())) {
+              $rootScope.perfil.avatarPerfil = storageService.getAvatar();
+            }else {
+              $rootScope.perfil.avatarPerfil = commonService.getFileUrl(data.avatar);
+            }
+            //hideLoading();
+            //if($state.current.name);
+            $state.go('dash.main');
+          },
+          function (e) {
+            //hideLoading()
+            console.log(e);
+          }
+        )
+      }else{
+        if($state.current.name !== 'login'){
+          $state.go('login');
+        }
+      }
     }
   }
 })();

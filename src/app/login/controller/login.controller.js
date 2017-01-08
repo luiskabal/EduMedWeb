@@ -7,32 +7,13 @@
         .controller('RegistrarController',RegistrarController);
 
 
-    LoginController.$inject = ['$scope','$log','$state','$modal','loginFactory','commonService','$rootScope','storageService','profileFactory'];
+    LoginController.$inject = ['$scope','$log','$state','$modal','loginFactory','commonService','$rootScope','storageService','profileFactory','validateService'];
     RegistrarController.$inject =['$scope','$log','loginFactory','$rootScope','commonService','$filter','utilsFactory','$window','$timeout'];
-    function LoginController($scope,$log,$state,$modal,loginFactory,commonService,$rootScope,storageService,profileFactory) {
+    function LoginController($scope,$log,$state,$modal,loginFactory,commonService,$rootScope,storageService,profileFactory,validateService) {
         var vm = this;
         vm.errorLogin = false;
 
-        if (!angular.isUndefined(storageService.getToken())) {
-          //showLoading();
-          var callPerfil = profileFactory.getProfile();
-          callPerfil.then(
-            function (data) {
-              $rootScope.perfil = data;
-              if (!angular.isUndefined(storageService.getAvatar())) {
-                $rootScope.perfil.avatarPerfil = storageService.getAvatar();
-              }else {
-                $rootScope.perfil.avatarPerfil = commonService.getFileUrl(data.avatar);
-              }
-              //hideLoading();
-              $state.go('dash.main');
-            },
-            function (e) {
-              //hideLoading()
-              console.log(e);
-            }
-          )
-        }
+        validateService.isValid();
 
         $scope.$watchGroup(['login.password','login.user'], function() {
           if(vm.errorLogin) {
