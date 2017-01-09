@@ -8,13 +8,8 @@
     .module('eduMed')
     .controller('modulosController', modulosController);
 
-  modulosController.$inject = ['$scope','$rootScope','$state','$stateParams','$ionicHistory','$log','$ionicLoading','$sce','$ionicModal','$ionicPopup','$timeout','commonService','guidesFactory','avancesFactory'];
-  function modulosController($scope,$rootScope,$state,$stateParams,$ionicHistory,$log,$ionicLoading,$sce,$ionicModal,$ionicPopup,$timeout,commonService,guidesFactory,avancesFactory) {
-    //forzar salida backbutton
-    $scope.$on('$ionicView.beforeEnter', function (event, viewData) {
-      viewData.enableBack = true;
-    });
-
+  modulosController.$inject = ['$scope','$rootScope','$state','$stateParams','$log','$sce','$timeout','commonService','guidesFactory','avancesFactory'];
+  function modulosController($scope,$rootScope,$state,$stateParams,$log,$sce,$timeout,commonService,guidesFactory,avancesFactory) {
 
     var vm = this;
 
@@ -29,16 +24,10 @@
     vm.mensajeFinalVideo=false;
 
 
+    console.log($stateParams.id);
+    vm.idGuide = $stateParams.id;
+    loadGuide(vm.idGuide);
 
-
-    $scope.$on('$ionicView.enter',function(e){
-      vm.idGuide = $stateParams.id;
-      loadGuide(vm.idGuide);
-
-      $rootScope.goBack = commonService.goBack($ionicHistory);
-    });
-
-    // .-
 
 
     // scope functions
@@ -48,7 +37,7 @@
       $scope.selectedModule = vm.selectedModule;
       $scope.modal.show();
       $scope.selectedAnswers = {};
-      _.forEach(vm.selectedModule.preguntas,function(p){
+      angular.forEach(vm.selectedModule.preguntas,function(p){
         console.log(p);
         $scope.selectedAnswers[p.idPregunta] = null;
       });
@@ -61,7 +50,7 @@
       console.log($scope.selectedAnswers);
       var answers = [];
       var invalidAnswer = false;
-      _.forEach(vm.selectedModule.preguntas,function(p){
+      angular.forEach(vm.selectedModule.preguntas,function(p){
         if($scope.selectedAnswers[p.idPregunta]==null){
           invalidAnswer = true;
         }
@@ -101,8 +90,8 @@
               }else{
                 $scope.modal.hide();
                 var selectedModule = vm.selectedModule;
-                _.forEach(selectedModule.preguntas,function(p){
-                  _.forEach(p.respuestas,function(r){
+                angular.forEach(selectedModule.preguntas,function(p){
+                  angular.forEach(p.respuestas,function(r){
                     //r.idRadio = 'p'+p.idPregunta+'r'+r.idRespuesta;
                     document.getElementById(r.idRadio).checked = false;
                   })
@@ -152,8 +141,8 @@
         vm.selectedModule = vm.guide.modulos[id - 1];
         setVideo(vm.selectedModule);
         var selectedModule = vm.selectedModule;
-        _.forEach(selectedModule.preguntas,function(p){
-          _.forEach(p.respuestas,function(r){
+        angular.forEach(selectedModule.preguntas,function(p){
+          angular.forEach(p.respuestas,function(r){
             r.idRadio = 'p'+p.idPregunta+'r'+r.idRespuesta;
           })
         });
@@ -192,9 +181,6 @@
       theme: {
         url: "lib/videogular-themes-default/videogular.css"
       }
-      //,plugins: {
-      //	poster: "video/La_artritis_psoriasica.jpg"
-      //}
     };
 
     // Events video
@@ -228,11 +214,11 @@
     }
 
     // init modal
-    $ionicModal.fromTemplateUrl('app/modulos/test.html', {
+   /* $ionicModal.fromTemplateUrl('app/modulos/test.html', {
       animation: 'slide-in-up', scope: $scope
     }).then(function(modal) {
       $scope.modal = modal;
-    });
+    });*/
 
 
 
@@ -256,7 +242,7 @@
       if(vm.guide.modulos){
         //selecciona el modulo
         var lastComplete = 0;
-        _.forEach(vm.guide.modulos,function(mod){
+        angular.forEach(vm.guide.modulos,function(mod){
           var modulo = vm.guide.avance.modulos[mod.idModulo-1];
           console.log(modulo && modulo.completado);
           if(modulo && modulo.completado){
@@ -267,13 +253,10 @@
         if(angular.isUndefined(selectedModule)){
           selectedModule = vm.guide.modulos[0];
         }
-        /*if(vm.sendedVideo!=null){
-         selectedModule = vm.guide.modulos[vm.sendedVideo+1];
-         }*/
 
         //id para las preguntas
-        _.forEach(selectedModule.preguntas,function(p){
-          _.forEach(p.respuestas,function(r){
+        angular.forEach(selectedModule.preguntas,function(p){
+          angular.forEach(p.respuestas,function(r){
             r.idRadio = 'p'+p.idPregunta+'r'+r.idRespuesta;
           })
         });

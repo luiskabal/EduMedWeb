@@ -19,9 +19,10 @@
 		};
 
     vm.toContent = function(idGuide) {
-      console.log('toContent: ' + idGuide);
+      console.log(idGuide);
+
       $state.go(
-        'app.modulo',
+        'dash.modulo',
         {
           id: idGuide
         }
